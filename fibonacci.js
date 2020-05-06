@@ -25,7 +25,8 @@ console.log(fibT(100));
 ///1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 ///By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-function fibEven(n = 100, max = 4000000) {
+function fibEven(n = 34, max = 4000000) {
+// Fib(34) = 5702887
   if (n <= 2) return 1;
   let fibNums = [0, 1, 1];
   let sumOfEvenFib = 0;
