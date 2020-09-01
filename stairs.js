@@ -16,3 +16,12 @@ const fibPhi = number => Math.round(Math.pow(phi, (number + 1)) / Math.sqrt(5))
 //How to count the number of ways if the person can climb up to m stairs for a given value m. For example, if m is 4, the person can climb 1 stair or 2 stairs or 3 stairs or 4 stairs at a time.
 
 
+const fibPlus = (number, plus, memo) => {
+	if (memo[number] !== undefined) return memo[number];
+	if (number <= 1) return 1
+	let distinctWays = 0
+	for (let i = plus; i > 0; i --){
+		distinctWays += fibPlus(number - i, memo)
+	}
+	return distinctWays
+}
