@@ -1,0 +1,229 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: #eee;
+}
+
+:root {
+  --accent01: #56d8ff;
+  --accent02: #ff8ca5;
+  --accent03: #ffda56;
+  --accent01-Saturated: #00c3ff;
+  --accent02-Saturated: #f05;
+  --accent03-Saturated: #ffc800;
+  --neutral-grey: #333;
+  --dark-black: #111;
+  --medium-black: #0b0b0c;
+  --text-Shadow01: 1px 1px 1px var(--accent01-Saturated);
+  --text-Shadow02: 1px 1px 1px var(--accent02-Saturated);
+  --text-Shadow03: 1px 1px 1px var(--accent03-Saturated);
+
+  --cardColor0: #000;
+  --cardColor1: #000;
+  --cardColor2: #000;
+  --cardColor3: #000;
+  --cardColor4: #000;
+  --cardColor5: #000;
+  --cardColor6: #000;
+  --cardColor7: #000;
+  --cardColor8: #000;
+  --cardColor9: #000;
+  --cardColor10: #000;
+  --cardColor11: #000;
+}
+
+body {
+	background: var(--medium-black) url('../files/memoryBackground.jpg') no-repeat;
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+}
+
+header {
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+  top: 0;
+  width: 120px;
+}
+
+button{
+  cursor: pointer;
+}
+
+button:disabled{
+  cursor: not-allowed;
+}
+
+button:hover{
+  filter: brightness(90%);
+}
+
+#gameNavigation {
+  min-height: 50%;
+  display: block;
+  text-align: center;
+  justify-content: center;
+}
+
+.mainWrapper {
+  display: flex;
+  flex-flow: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+  margin: 10px;
+  padding: 10px;
+}
+
+.memoryField {
+	display: flex;
+	flex-wrap: wrap;
+	background: #555;
+	min-height: 15vh;
+	min-width: 60vh;
+  max-width: 75%;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	padding: 15px 0;
+	box-shadow: 2px 2px 2px #111;
+}
+
+.memoryField__card {
+		width: 6em;
+		height: 6em;
+		margin: 5px;
+		background: #A39191;
+		border-radius: 25%;
+		box-shadow: 3px 3px 2px #111;
+}
+
+.memoryField__card:hover {
+		filter: brightness(85%)
+	}
+
+.rankingField {
+	background: #555;
+	width: 40vh;
+	max-height: 25vh;
+	border-radius: 2.5%;
+	text-align: center;
+	padding: 5px;
+	box-shadow: 2px 2px 2px #111;
+}
+
+.gamePanel {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 15px;
+  margin: 15px;
+	max-width: 70%;
+	height: 200px;
+	background: #555;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #111;
+}
+
+.gameNavigationButton{
+	margin: 3px;
+	width: 130px;
+	height: 5em;
+	color: #222;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 16px;
+	/* text-shadow: 1px 1px 1px #333; */
+
+}
+
+.gamePanel button:focus {
+	filter: brightness(85%)
+}
+
+.gamePanel button:disabled {
+	filter: brightness(50%)
+}
+
+.gamePanel button:hover:enabled {
+	filter: brightness(90%);
+	cursor: pointer;
+}
+
+.displayInformationField{
+  display: flex;
+  flex-flow: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+  background: rgba(100,100,100,0.8);
+	min-height: 15vh;
+	min-width: 30vh;
+  max-width: 60vh;
+	text-shadow: 2px 2px 2px #111;
+	text-align: center;
+	padding: 10px;
+  margin: 10px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #111;
+}
+
+
+/* Hard coded values of collors. Right now 12 pairs is max. */
+.card1:active, .card2:active, .active0, .active1 {
+	/* background: #4285F4; */
+  background: var(--cardColor0);
+}
+
+.card3:active, .card4:active, .active2, .active3 {
+	/* background: #DB4437; */
+  background: var(--cardColor1);
+}
+
+.card5:active, .card6:active, .active4, .active5 {
+	/* background: #F4B400; */
+  background: var(--cardColor2);
+}
+
+.card7:active, .card8:active, .active6, .active7 {
+	/* background: #0F9D58; */
+  background: var(--cardColor3);
+}
+
+.card9:active, .card10:active, .active8, .active9 {
+	/* background: #0FF; */
+  background: var(--cardColor4);
+}
+
+.card11:active, .card12:active, .active10, .active11 {
+	/* background: #FF0090; */
+  background: var(--cardColor5);
+}
+
+.card13:active, .card14:active, .active12, .active13 {
+	background: var(--cardColor6);
+}
+
+.card15:active, .card16:active, .active14, .active15 {
+	background: var(--cardColor7);
+}
+
+.card17:active, .card18:active, .active16, .active17 {
+	background: var(--cardColor8);
+}
+
+.card19:active, .card20:active, .active18, .active19 {
+	background: var(--cardColor9);
+}
+
+.card21:active, .card22:active, .active20, .active21 {
+	background: var(--cardColor10);
+}
+
+.card23:active, .card24:active, .active22, .active23 {
+	background: var(--cardColor11);
+}
