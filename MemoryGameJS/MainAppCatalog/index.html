@@ -15,28 +15,40 @@
       <button class="gameNavigationButton" id="gamePanel-start">Start new set</button>
       <button class="gameNavigationButton" id="gamePanel-shuffle">Shuffle</button>
       <button class="gameNavigationButton" id="gamePanel-delete">Delete cards</button>
-      <button class="gameNavigationButton" id="gamePanel-show">Show answers</button>
+      <button class="gameNavigationButton" id="gamePanel-show">Show answers (help)</button>
       <button class="gameNavigationButton" id="gamePanel-reset">Reset Game</button>
     </div>
   </header>
   <!-- Need formore descriptives class names -->
     <div class="mainWrapper"> 
         <div class="displayInformationField">
-          <p>Dear player. 
+          <p>
+            Dear player. 
             Hue of a card (pair of cards) is generated randomly. 
-            There is a possibility to get several (or even all!) card pairs in same collor.</p>
+            There is a possibility to get several (or even all!) 
+            card pairs in same collor.
+          </p>
+          <input type="range" min="4" max="12" value="12" class="slider" id="NumberOfPairs">
+          <p class="textDisabled">Number of pairs in new game: <span id="nextGamePairsDisplayer"></span></p>
         </div>
         <!-- game informations panel panel -->
         <div class="displayInformationField" id="gameInfo">
+          <!-- Don't delete those paragraphs! -->
+          <h2>Player informations:</h2>
           <p></p>
           <p></p>
-          <p>You have found X ot ouf Y pairs</p>
-          <p>You have won 0 times</p>
+          <p></p>
+          <p></p>
         </div>
         <div class="memoryField" id="memoryField"></div>
-        <div class="displayInformationField" id="consoleField"></div>
+        <div class="displayInformationField" id="consoleField">
+          <h2>Win scores table</h2>
+        </div>
+        <div class="displayInformationField">
+          <h2>Founded Pairs table</h2>
+          <p id="foundedPairs"></p>
+        </div>
     </div>
-
 </body>
 <script type="text/javascript" src="js/main.js"></script>
 

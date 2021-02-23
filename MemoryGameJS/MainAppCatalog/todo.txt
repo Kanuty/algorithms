@@ -1,9 +1,0 @@
-- pole gry
-- licznik prób
-- licznik sukcesu
-- lista znalezionych obrazków
-- reset button
-- licznik czasu(dodatkowo)
-- komunikacja z użytkownikiem(dodatkowo)
-
-- przygotować stringi pod translacje?
