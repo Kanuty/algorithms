@@ -5,9 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Style-Type" content="text/css">
     <meta name="description" content="Memory Games">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    
 </head>
 <body>
   <header>
@@ -22,34 +20,36 @@
   <!-- Need formore descriptives class names -->
     <div class="mainWrapper"> 
         <div class="displayInformationField">
-          <p>
-            Dear player. 
+          <h2>
+            Dear player
+          </h2>
+          <p> 
             Hue of a card (pair of cards) is generated randomly. 
             There is a possibility to get several (or even all!) 
-            card pairs in same collor.
+            card pairs in same collor. If you stuck, please push 'Reset Game' button.
+            'Reset Game' won't reset your score! It will just delet cards, shuffle collors and create new set of cards.
           </p>
           <input type="range" min="4" max="12" value="12" class="slider" id="NumberOfPairs">
           <p class="textDisabled">Number of pairs in new game: <span id="nextGamePairsDisplayer"></span></p>
         </div>
         <!-- game informations panel panel -->
         <div class="displayInformationField" id="gameInfo">
-          <!-- Don't delete those paragraphs! -->
+          <!-- Don't delete those paragraphs ! -->
           <h2>Player informations:</h2>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p>You have 0 sec of fun!</p>
+          <p>You have clicked 0 times this round</p>
+          <p>You have found 0 pairs</p>
+          <p>You have won 0 times</p>
         </div>
         <div class="memoryField" id="memoryField"></div>
         <div class="displayInformationField" id="consoleField">
           <h2>Win scores table</h2>
         </div>
         <div class="displayInformationField">
-          <h2>Founded Pairs table</h2>
+          <h2>Cards that have been paired correctly</h2>
           <p id="foundedPairs"></p>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="js/main.js"></script>
-
 </html>

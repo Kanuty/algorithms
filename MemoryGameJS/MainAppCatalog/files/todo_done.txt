@@ -1,14 +1,20 @@
-- pole gry + (game field with cards)
-- licznik prób + (You have clicked X cards)/(You have won X times)
-- licznik sukcesu + (You have found X out of Y pairs)
-- lista znalezionych obrazków + (Founded pairs table)
-- reset button + (Reset Game || Delete cards, Shuffle, Start new set) -> (2 ways of reseting games)
-- licznik czasu(dodatkowo) + ( It is kind of lame counter but to be honest no one told what exactlly shoud be counted.)
-- komunikacja z użytkownikiem(dodatkowo) - ( player can play with slider but can't change number of cards in a game (quantity variable (responsible for handling number of cards) shoud have a subscription mechanism or global state controller)
-programmer can manual change value of 'quantity' variable to change number of card pairs. Max number of pairs is 12(see numberOfColors function in main.js for more info)
+- pole gry:  (Game field with cards)
+- licznik prób:  (You have clicked X cards)/(You have won X times)
+- licznik sukcesu:  (You have found X out of Y pairs)
+- lista znalezionych obrazków: (Cards that have been paired corectly)
+- reset button: (Reset Game || Delete cards, Shuffle, Start new set) -> (2 ways of reseting games)
+- licznik czasu(dodatkowo): (It is kind of lame counter but to be honest no one told what exactlly shoud be counted.)
+- komunikacja z użytkownikiem(dodatkowo): (Player can play with slider but can't change number of cards in a game (quantity variable (responsible for handling number of cards) shoud have a subscription mechanism or global state controller)
+- Podstawowe animacje/"transitions" css(dodatkowo): (Simply but effective mix of 3d rotation (for game playability changed later for 2d animation) and fixed position background image) 
+- Responsywność(dodatkowo):
+programmer can manual change value of 'quantity' variable to change number of card pairs. Max number of pairs is 12(see numberOfColors function in main.js for more info). Also number of pairs can be limited by background image of cards (planet picture) because it doesn't scale infinitly in current implementation.
+
+- Estetyka 
+- Dopasowanie kolorystyki (card colors are picked randomly... which in the end is not best solution. Pre defined set of  contrasting colors could woul work better)
 
 Things that shoud be improved:
 - Modules: Allfuncionalities are  in huge monolitic main.js
 - Core functionality: Player can start to click cards before their are covered. Player can click already discovered pairs. Player don't know which card was clicked last time what can lead to a frustration.
 - Mutability: Quantity of mutability in this code woud make Darwin proud. Myself - not somuch. 0 design patterns. No observables, 0 state controll mechanism. No
 - Unit tests...  
+- Preper for translations (text as a variable)

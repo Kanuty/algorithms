@@ -16,17 +16,10 @@ const cards = document.getElementsByClassName('memoryField__card');
 cardSliderOutput.innerHTML = cardSlider.value;
 cardSlider.oninput = () => cardSliderOutput.innerHTML = cardSlider.value;
 
-
-
 // quantity of cards in game
 // TODO: change quantity variable to an subscription object.
 // let quantity = parseInt(cardSlider.value) || 12;
 const quantity =  24;
-
-const timeDisplayer = gameInfo.getElementsByTagName('p')[0].innerHTML = `You have 0 sec of fun!`;
-const movesDisplayer = gameInfo.getElementsByTagName('p')[1].innerHTML = `You have clicked 0 times this round`;
-const foundPairsDisplayer = gameInfo.getElementsByTagName('p')[2].innerHTML = `You have found 0 ot ouf ${quantity/2} pairs`;
-const wonQuantityDisplayer = gameInfo.getElementsByTagName('p')[3].innerHTML = `You have won 0 times`;
 
 const timeDisplayerAcrualise = (sec) => gameInfo.getElementsByTagName('p')[0].innerHTML = `You have ${sec} sec of fun!`;
 const movesDisplayerActualise = () => gameInfo.getElementsByTagName('p')[1].innerHTML = `You have clicked ${moves} times this round`;
@@ -46,8 +39,6 @@ const usedIdsArray = []; // container for used IDs in process of generaiting car
 const cardN = []; // array of created cards (divs)
 const slicedRandArr = []; 
 let foundedCardArr = [];
-
-
 
 const winReq = quantity/2;
 let winCount = 0; 
@@ -181,18 +172,14 @@ const cardComparision = (id, position) => {
           cardN[lastPosition].style.background = blank;
           winCount++;
           alreadyMatched[0]++;
-					foundedCardArr.push(` ${(cardN[position].id).toString()}`)
-					foundedCardArr.push(` ${(cardN[lastPosition].id).toString()}`)
-					foundedPairsField.innerHTML = foundedCardArr;
+					updateFoundPairs(lastPosition, position);
         }
         else if (matchCheaker[i] === matchCheaker[i+1] && matchCheaker[i] === 1 && alreadyMatched[i/2] !== 1){
           cardN[position].style.background = blank;
           cardN[lastPosition].style.background = blank;
           winCount++;
           alreadyMatched[i/2]++;
-					foundedCardArr.push(` ${(cardN[position].id).toString()}`)
-					foundedCardArr.push(` ${(cardN[lastPosition].id).toString()}`)
-					foundedPairsField.innerHTML = foundedCardArr;
+					updateFoundPairs(lastPosition, position);
         }}
 		matchCheaker.fill(0);
 	}
@@ -205,6 +192,13 @@ const cardComparision = (id, position) => {
     numberOfWins += 1;
     wonQuantityDisplayerActualise();
 	}
+}
+
+const updateFoundPairs = (indexOld, indexCurrent) => {
+	foundedCardArr.push(` ${(cardN[indexOld].id).toString()}`)
+	foundedCardArr.push(` ${(cardN[indexCurrent].id).toString()}`)
+	foundedPairsField.innerHTML = foundedCardArr;
+	foundPairsDisplayerActualise();
 }
 
 const newWinInfo = (elementDOM) => {
@@ -233,6 +227,9 @@ const resetGlobalFlags = () => {
 	moves = 0;
 	alreadyMatched = new Array(quantity/2).fill(0);
 	winCount = 0;
+	movesDisplayerActualise();
+	foundPairsDisplayerActualise ();
+	wonQuantityDisplayerActualise();
 }
 
 let present = 0;
